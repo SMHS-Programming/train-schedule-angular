@@ -10,16 +10,23 @@
     body {
       margin-left: 10%;
       margin-right: 10%;
+      margin-top: 5%;
     }
   </style>
   <body>
-    <h2>Trains</h2>
+    <div class="panel panel-default" ng-controller="TrainSchedule">
+      <div class="panel-heading">
+        Train Schedule
+      </div>
 
-    <div ng-controller="TrainSchedule">
-      <span>{{trainTimes.length}} upcoming trains</span>
+      <div class="panel-body">
+        {{trainTimes.length}} trains upcoming.
+      </div>
 
       <ul class="list-group">
-          <li class="list-group-item" ng-repeat="train in trainTimes">{{train.name}}</li>
+          <li class="list-group-item" ng-repeat="train in trainTimes">
+            <strong>{{train.name}}</strong> arrives in <strong>{{train.time}}</strong>
+          </li>
       </ul>
     </div>
   </body>
