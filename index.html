@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="train-app">
+<html ng-app="events-app">
 
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
@@ -13,22 +13,38 @@
       margin-top: 5%;
     }
   </style>
-  <body>
-    <div class="panel panel-default" ng-controller="TrainSchedule">
+  <body ng-controller="EventSchedule">
+    <div class="panel panel-default">
       <div class="panel-heading">
-        Train Schedule
+        Reminder List
       </div>
 
       <div class="panel-body">
-        {{trainTimes.length}} trains upcoming.
+        {{events.length}} items to complete.
       </div>
 
       <ul class="list-group">
-          <li class="list-group-item" ng-repeat="train in trainTimes">
-            <strong>{{train.name}}</strong> arrives in <strong>{{train.time}}</strong>
-          </li>
+        <li class="list-group-item" ng-repeat="event in events">
+          <strong>{{event.name}}</strong> by <strong>{{event.time}}</strong>
+        </li>
       </ul>
     </div>
+
+    <form class="form-inline" ng-submit="addEvent()">
+      <div class="form-group">
+        <label for="eventName">Event</label>
+        <input id="eventName" type="text" ng-model="eventName" name="eventName" /></span>
+      </div>
+
+      <div class="form-group">
+        <label for="eventTime">Time</label>
+        <input id="eventTime" type="text" ng-model="eventTime" name="eventTime" /></span>
+      </div>
+
+      <button type="submit" id="submit" class="btn btn-default">Add Event</button>
+    </form>
   </body>
+
+
 
 </html>
