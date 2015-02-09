@@ -1,6 +1,7 @@
 <!doctype html>
 <html ng-app="events-app">
 
+<<<<<<< Updated upstream
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
     <script src="app.js"></script>
@@ -47,4 +48,35 @@
 
 
 
+=======
+    <head>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+
+        <link rel="stylesheet" href="bootstrap.min.css">
+        
+        <style>
+            body {
+                margin-left: 10%;
+                margin-right: 10%;
+                margin-top: 5%;
+            }
+    </style>
+    </head>
+    <body>
+        <div class="panel panel-default" ng-controller="TrainSchedule">
+            <div class="panel-heading">
+                Train Schedule
+            </div>
+            <div class="panel-body">
+                {{trainTimes.length}} trains upcoming.
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="train in trainTimes">
+                    <strong>{{train.name}}</strong> arrives in <strong>{{train.time}}</strong>
+                </li>
+            </ul>
+        </div>
+    </body>
+>>>>>>> Stashed changes
 </html>
