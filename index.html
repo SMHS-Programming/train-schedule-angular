@@ -13,6 +13,15 @@
         }
     </style>
     <body ng-controller="EventSchedule">
+        <h3>Your assignment: Add a 'location' space to the below code.</h3>
+        <p>Use Gareth's code to see what you need to have fields. Don't forget to inlude the following features:</p>
+        <ul>
+            <li>an location field</li>
+            <li>a place to input the location field when making new events</li>
+            <li>add the location along with the new event when adding an event</li>
+            <li>reset the value of the location</li>
+        </ul>
+        <p color="text-danger">Above all, remember to ask us for hints and help!</p>
         <div class="panel panel-default">
             <div class="panel-heading">
                 Reminder List
@@ -24,7 +33,7 @@
 
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="event in events">
-                    <strong>{{event.name}}</strong> by <strong>{{event.time}}</strong>
+                    <strong>{{event.name}}</strong> by <strong>{{event.time}}</strong> at <strong> {{event.location}} </strong>
                 </li>
             </ul>
         </div>
@@ -38,16 +47,11 @@
                 <label for="eventTime">Time</label>
                 <input id="eventTime" type="text" ng-model="eventTime" name="eventTime" /></span>
             </div>
+            <div class="form-group">
+                <label for="eventLocation">Location</label>
+                <input id="eventLocation" type="text" ng-model="eventLocation" name="eventLocation" /></span>
+            </div>
             <button type="submit" id="submit" class="btn btn-default">Add Event</button>
-            <h3>Your assignment: Add a 'location' space to the above code.</h3>
-            <p>Use Gareth's code to see what you need to have fields. Don't forget to inlude the following features:</p>
-            <ul>
-                <li>an location field</li>
-                <li>a place to input the location field when making new events</li>
-                <li>add the location along with the new event when adding an event</li>
-                <li>reset the value of the location</li>
-            </ul>
-            <p color="red">Above all, remember to ask us for hints and help!</p>
         </form>
     </body>
 </html>
